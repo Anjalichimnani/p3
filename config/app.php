@@ -145,6 +145,15 @@ return [
         p3\Providers\EventServiceProvider::class,
         p3\Providers\RouteServiceProvider::class,
 
+        /*
+         * Laravel DebugBar
+         */
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+        /*
+         * Laravel Log Viewer
+         */
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
     ],
 
     /*
@@ -194,6 +203,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        /*
+         * Facade for Laravel DebugBar
+         */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

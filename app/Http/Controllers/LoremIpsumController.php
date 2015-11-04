@@ -20,7 +20,7 @@ class LoremIpsumController extends Controller {
         $generator = new Generator();
         $paragraphs = $generator->getParagraphs ($noOfParas);
 
-        return view('loremipsum.LoremIpsum')->with('title', 'Lorem Ipsum Generator')->with('paragraphs', $paragraphs);
+        return view('loremipsum.loremIpsum')->with('title', 'Lorem Ipsum Generator')->with('paragraphs', $paragraphs);
     }
 
     public function postLoremIpsum(Request $request) {
@@ -29,7 +29,7 @@ class LoremIpsumController extends Controller {
         $generator = new Generator();
         $paragraphs = $generator->getParagraphs ($noOfParas);
 
-        return view('loremipsum.LoremIpsum')->with('title', 'Lorem Ipsum Generator')->with('paragraphs', $paragraphs);
+        return view('loremipsum.loremIpsum')->with('title', 'Lorem Ipsum Generator')->with('paragraphs', $paragraphs);
     }
 
 }

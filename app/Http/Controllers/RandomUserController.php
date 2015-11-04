@@ -53,7 +53,7 @@ class RandomUserController extends Controller {
             $users[$name] = array($email,$userPic);
         }
 
-        return view('randomuser.RandomUser')->with('title', 'Random User Generator')->with('users', $users);
+        return view('randomuser.randomUser')->with('title', 'Random User Generator')->with('users', $users);
 
     }
 

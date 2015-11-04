@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@getIndex');
 
 Route::get('/loremipsum/{noOfParas?}', 'LoremIpsumController@getLoremIpsum');
 
-Route::get('/randomuser/{noOfUsers}', 'RandomUserController@getRandomUser');
+Route::post('/loremipsum', 'LoremIpsumController@postLoremIpsum');
+
+Route::get('/randomuser/{noOfUsers?}', 'RandomUserController@getRandomUser');
+
+Route::post('/randomuser', 'RandomUserController@postRandomUser');
 
 //logs
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

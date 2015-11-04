@@ -20,6 +20,12 @@
     </header>
 
     <section>
+        <center>
+            <h1>@yield('topic')</h1>
+        </center>
+    </section>
+
+    <section>
 
         {{-- Main Page Content will be yielded here --}}
         @yield('content')
@@ -34,6 +40,6 @@
 
     {{-- Yield any page specific JS files or anything else you might want at the end of the body --}}
     @yield('body')
-    
+
 </body>
 </html>

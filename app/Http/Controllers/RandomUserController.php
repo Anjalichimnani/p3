@@ -4,6 +4,7 @@ namespace p3\Http\Controllers;
 
 use p3\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Badcow\LoremIpsum\Generator;
 use Storage;
 
 class RandomUserController extends Controller {
@@ -21,15 +22,38 @@ class RandomUserController extends Controller {
 
     public function postRandomUser(Request $request) {
 
-
         $contents = Storage::disk('local')->get('libraries\Names.txt');
         $content_array = explode ('<@>',$contents);
 
-        \Debugbar::info($content_array[2]);
         $noOfUsers = $request->input('noOfUsers');
         $withProfile = $request->input('withProfile');
-        \Debugbar::info($withProfile);
-        return $noOfUsers .' Users Generated';
+
+        $users = array();
+
+        $content_array_size = sizeof($content_array);
+        for ($i = 0; $i < $noOfUsers; $i++) {
+            $random = new \Rych\Random\Random();
+            $randomNumber = $random->getRandomInteger(0, $content_array_size - 1);
+
+            $name = $content_array[$randomNumber];
+            $email = str_replace(" ","_",$name);
+            $email = "Email:\n".$email."@webdevelopment.info.com"."\n\n";
+
+            if ($withProfile == 'Yes') {
+                $generator = new Generator();
+                $profile = $generator->getParagraphs (1);
+                $profile = implode('<p>',$profile);
+
+                $email= $email."Profile:\n".$profile;
+            }
+
+            $randomNumber = $random->getRandomInteger(1, 5);
+            $userPic = 'img\User_'.$randomNumber.'.jpg';
+
+            $users[$name] = array($email,$userPic);
+        }
+
+        return view('randomuser.RandomUser')->with('title', 'Random User Generator')->with('users', $users);
 
     }
 

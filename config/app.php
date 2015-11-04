@@ -154,6 +154,11 @@ return [
          * Laravel Log Viewer
          */
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+
+        /*
+         * Blade HTML Image
+         */
+        Illuminate\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -207,6 +212,12 @@ return [
          * Facade for Laravel DebugBar
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        /*
+         * Blade HTML Image
+         */
+        'Form'=> 'Illuminate\Html\FormFacade',
+        'HTML'=> 'Illuminate\Html\HtmlFacade',
     ],
 
 ];

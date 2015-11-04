@@ -14,29 +14,37 @@
     height="300"
     alt='Laravel5 Logo'>
 
+    <br/><br/>
+
     <p>
         Laravel is a <b>free, open-source PHP web application framework</b>, created by <b>Taylor Otwell</b> and intended for the development of web applications following the <b>Model–View–Controller (MVC)</b> architectural pattern. Some of the features of Laravel are a modular packaging system with a dedicated dependency manager, different ways for accessing relational databases, utilities that aid in application deployment and maintenance, and its orientation toward syntactic sugar.
         <br/><br/>
         To view its different Capabilities, we have two functionalities as:
+        <br/>
     </p>
 
-    <p>
-        <form method='POST' action='/loremipsum'>
-            <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-            <label>No. Of Paragraphs</label>
-            <input type='text' name='noOfParas'><br/><br/>
-            <input type='submit' value='Submit'>
-        </form>
-    </p>
+    <div class="row">
+        <div class="col-sm-6">
+            <strong>Lorem Ipsum Generator</strong><br/><br/>
+            <form method='POST' action='/loremipsum'>
+                <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                <span class="label label-danger">No. Of Paragraphs</span>
+                <input type='text' name='noOfParas'><br/><br/>
+                <input type='submit' value='Submit' class="btn">
+            </form>
+        </div>
 
-    <p>
-        <form method='POST' action='/randomuser'>
-            <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-            <label>No. Of Users</label>
-            <input type='text' name='noOfUsers'><br/>
-            <input type="checkbox" name="withProfile" value="Yes"> With Profile<br><br>
-            <input type='submit' value='Submit'>
-        </form>
-    </p>
+        <div class="col-sm-6">
+            <strong>Random User Generator</strong><br/><br/>
+            <form method='POST' action='/randomuser'>
+                <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                <span class="label label-danger">No. Of Users</span>
+                <input type='text' name='noOfUsers'><br/>
+                <input type="checkbox" name="withProfile" value="Yes">With Profile<br><br>
+                <input type='submit' value='Submit' class="btn">
+            </form>
+        </div>
+    </div>
 
+    <br/>
 @stop

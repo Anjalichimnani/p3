@@ -15,3 +15,7 @@
         </p>
     @endforeach
 @stop
+
+@section('home')
+    <a href="/" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-home"></span> Home</a>
+@stop

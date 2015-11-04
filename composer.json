@@ -10,7 +10,9 @@
         "barryvdh/laravel-debugbar": "^2.0",
         "rych/random": "dev-master",
         "rap2hpoutre/laravel-log-viewer": "^0.4.3",
-        "badcow/lorem-ipsum": "^1.1"
+        "badcow/lorem-ipsum": "^1.1",
+        "illuminate/html": "5.*",
+        "twbs/bootstrap": "^3.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -18,7 +18,7 @@ Validation is provided for 2 form controls to be mandatory and be numeric.
 While during practise, Laravel Debugbar and Laravek Log Viewer are added to the project for detailed logs in the project.
 
 ## Demo
-As it is a basic website , there is no demo to the project
+<https://youtu.be/IIb97ME6dng>
 
 ## Details for teaching team
 No login required.

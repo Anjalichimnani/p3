@@ -26,6 +26,15 @@
     <div class="row">
         <div class="col-sm-6">
             <strong>Lorem Ipsum Generator</strong><br/><br/>
+
+            @if($errors->get('noOfParas'))
+                <ul>
+                    @foreach($errors->get('noOfParas') as $error)
+                        <li><div class="error">{{ $error }}</div></li>
+                    @endforeach
+                </ul>
+            @endif
+
             <form method='POST' action='/loremipsum'>
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                 <span class="label label-danger">No. Of Paragraphs</span>
@@ -36,6 +45,15 @@
 
         <div class="col-sm-6">
             <strong>Random User Generator</strong><br/><br/>
+
+            @if($errors->get('noOfUsers'))
+                <ul>
+                    @foreach($errors->get('noOfUsers') as $error)
+                        <li><div class="error">{{ $error }}</div></li>
+                    @endforeach
+                </ul>
+            @endif
+            
             <form method='POST' action='/randomuser'>
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                 <span class="label label-danger">No. Of Users</span>

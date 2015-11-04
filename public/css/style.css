@@ -11,6 +11,10 @@ p {
     text-align: justify;
 }
 
+.error {
+	color: red;
+}
+
 footer {
     bottom: 0;
     position: fixed;

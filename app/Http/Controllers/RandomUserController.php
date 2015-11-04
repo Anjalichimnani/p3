@@ -22,6 +22,11 @@ class RandomUserController extends Controller {
 
     public function postRandomUser(Request $request) {
 
+        //Validate that Number of Users is integer
+        $this->validate($request, [
+            'noOfUsers' => 'required|numeric',
+       ]);
+
         $contents = Storage::get('libraries/Names.txt');
         $content_array = explode ('<@>',$contents);
 

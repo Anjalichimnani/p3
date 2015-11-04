@@ -25,6 +25,11 @@ class LoremIpsumController extends Controller {
 
     public function postLoremIpsum(Request $request) {
 
+        //Validate that Number of Paragraphs is integer
+        $this->validate($request, [
+            'noOfParas' => 'required|numeric',
+       ]);
+
         $noOfParas = $request->input('noOfParas');
         $generator = new Generator();
         $paragraphs = $generator->getParagraphs ($noOfParas);

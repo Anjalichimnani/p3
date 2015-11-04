@@ -22,7 +22,7 @@ class RandomUserController extends Controller {
 
     public function postRandomUser(Request $request) {
 
-        $contents = Storage::get('\libraries\Names.txt');
+        $contents = Storage::get('libraries/Names.txt');
         $content_array = explode ('<@>',$contents);
 
         $noOfUsers = $request->input('noOfUsers');
